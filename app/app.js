@@ -11,11 +11,12 @@ angular.module('zhufengchat',['ngRoute','angularMoment'])
     });
     //run 是系统启动后的第一个任务,一般用来注册监听
 }).run(function($rootScope,$location){
-    /*if(!$rootScope.user){
-        $location.path('/');
-    }*/
     if(sessionStorage.user){
         $rootScope.user = JSON.parse(sessionStorage.user);
+    }
+
+    if(!$rootScope.user){
+        $location.path('/');
     }
     $rootScope.$on('login',function(event,user){
         $rootScope.user = user;
