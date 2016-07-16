@@ -13,8 +13,8 @@
         </div>
         <div ng-show="user" >
             <ul class="nav navbar-nav navbar-right">
-                <li><img class="img-rounded" ng-src="{{user.avatar}}" alt=""></li>
-                <li>{{user.email}}</li>
+                <li><a><img class="img-rounded" ng-src="{{user.avatar}}" alt=""></a></li>
+                <li><a>{{user.email}}</a></li>
             </ul>
         </div>
     </div>
@@ -32,4 +32,5 @@
 <script src="/lib/angular-moment/angular-moment.js"></script>
 <script src="app.js"></script>
 <script src="controller/LoginCtrl.js"></script>
+<script src="controller/RoomsCtrl.js"></script>
 </html>
