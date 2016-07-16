@@ -6,14 +6,30 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-珠峰聊天室
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">珠峰聊天室</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><img src="" alt=""></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" ng-view>
+
+</div>
 </body>
 <script src="lib/jquery/dist/jquery.js"></script>
 <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular-route/angular-route.js"></script>
 <script src="/lib/moment/min/moment.min.js"></script>
-<script src="lib/moment/locale/zh-cn.js"></script>
-<script src="lib/angular-moment/angular-moment.js"></script>
+<script src="/lib/moment/locale/zh-cn.js"></script>
+<script src="/lib/angular-moment/angular-moment.js"></script>
 <script src="app.js"></script>
+<script src="controller/LoginCtrl.js"></script>
 </html>
