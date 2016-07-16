@@ -7,14 +7,25 @@ route.post('/login',function(req,res){
     var user = req.body;// {email:email}
     //先查询一下此用户是否已经注册
     models.User.findOne(user,function(err,doc){
-        if(doc){//如果有值表示此邮箱已经注册过了
-            res.send(doc);
+        if(err){
+            console.error(err);
+            res.statusCode(500).send('注册失败');
         }else{
-            user.avatar="https://secure.gravatar.com/avatar/"+util.md5(user.email)+"?s=48";
-            models.User.create(user,function(err,doc){
+            if(doc){//如果有值表示此邮箱已经注册过了
                 res.send(doc);
-            });
+            }else{
+                user.avatar="https://secure.gravatar.com/avatar/"+util.md5(user.email)+"?s=30";
+                models.User.create(user,function(err,doc){
+                    if(err){
+                        console.error(err);
+                        res.statusCode(500).send('注册失败');
+                    }else{
+                        res.send(doc);
+                    }
+                });
+            }
         }
+
     });
 
 });
