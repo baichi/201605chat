@@ -8,3 +8,8 @@ bower init
 ```
 
 ## 安装依赖的包
+```
+$ npm install express socket.io cookie-parser express-session mongoose --save
+       
+$ bower install angular angular-route angular-moment bootstrap --save
+```
